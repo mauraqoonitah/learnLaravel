@@ -18,7 +18,7 @@ class MahasiswaController extends Controller
         // $mahasiswa = DB::table('mahasiswa')->get();
         // dump($mahasiswa);
         // retrieve 
-        $mahasiswa = \App\Models\Student::all();
+        $mahasiswa = Student::all();
 
         return view('mahasiswa.index', ['mahasiswa' => $mahasiswa]);
     }

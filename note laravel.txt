@@ -1,0 +1,23 @@
+php artisan make
+
+php artisan make:controller namaController
+
+php artisan make:controller MahasiswaController --resource
+(dibikinin method2 specificnya misal delete update create show destroy)
+
+php artisan make:controller StudentsController -r -m namaModel
+(dibikinin model dari controllernya)
+
+konfigurasi database:
+di file .env
+isi DB_DATABASE=namaDatabase
+isi controller $mahasiswa = DB::table('mahasiswa')->get(); dump($mahasiswa);
+
+php artisan migrate
+
+php artisan migrate:rollback
+
+php artisan make:migration create_students_table(namaclass)
+
+membuat model yg dipetakan kedalam tabel:
+php artisan make:model namaModel
