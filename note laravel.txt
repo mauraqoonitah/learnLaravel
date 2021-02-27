@@ -21,3 +21,7 @@ php artisan make:migration create_students_table(namaclass)
 
 membuat model yg dipetakan kedalam tabel:
 php artisan make:model namaModel
+
+php artisan route:list
+Route::resource('students', 'StudentsController')
+
