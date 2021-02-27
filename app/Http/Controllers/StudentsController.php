@@ -99,7 +99,7 @@ class StudentsController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return view('students.edit', compact('student'));
     }
 
     /**
@@ -111,8 +111,28 @@ class StudentsController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+
+         // VALIDATE INPUT
+         $request->validate([
+            'nama' => 'required',
+            'nrm' => 'required|max:12',
+            'email' => 'required|email',
+            'jurusan' => 'required',
+                      
+        ]);
+
+        Student::where('id', $student->id)
+                ->update([
+                     'nama' => $request->nama,
+                     'nrm' => $request->nrm,
+                     'email' => $request->email,
+                     'jurusan' => $request->jurusan
+                ]);
+        // return $request;
+        return redirect('/students')->with('status', 'Data Mahasiswa Berhasil Diubah!');
+
     }
+
 
     /**
      * Remove the specified resource from storage.

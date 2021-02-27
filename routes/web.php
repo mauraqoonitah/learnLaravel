@@ -40,4 +40,8 @@ Route::get('/students', [StudentsController::class, 'index']);
 Route::get('/students/create', [StudentsController::class, 'create']);
 Route::get('/students/{student}', [StudentsController::class, 'show']);
 Route::post('/students', [StudentsController::class, 'store']);
+//store
 Route::delete('/students/{student}', [StudentsController::class, 'destroy']);
+//update
+Route::get('/students/{student}/edit', [StudentsController::class, 'edit']);
+Route::patch('/students/{student}', [StudentsController::class, 'update']);
