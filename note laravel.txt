@@ -25,3 +25,7 @@ php artisan make:model namaModel
 php artisan route:list
 Route::resource('students', 'StudentsController')
 
+php artisan make:migration add_soft_delete_to_students
+$table->softDeletes();
+php artisan migrate
+
